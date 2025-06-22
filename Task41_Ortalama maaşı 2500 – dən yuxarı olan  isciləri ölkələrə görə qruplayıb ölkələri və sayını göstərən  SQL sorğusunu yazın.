@@ -1,0 +1,6 @@
+-- Ortalama maaşı 2500 – dən yuxarı olan  isciləri ölkələrə görə qruplayıb ölkələri və sayını göstərən  SQL sorğusu yaz
+
+SELECT country, COUNT(*) AS employee_count
+FROM employees
+GROUP BY country
+HAVING AVG(salary) > 2500;
