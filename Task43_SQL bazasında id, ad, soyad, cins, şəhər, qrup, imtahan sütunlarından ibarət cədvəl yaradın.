@@ -1,0 +1,11 @@
+-- SQL bazasında id, ad, soyad, cins, şəhər, qrup, imtahan sütunlarından ibarət cədvəl yaradın.
+
+CREATE TABLE telebeler (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    ad VARCHAR(50),
+    soyad VARCHAR(50),
+    cins VARCHAR(10),
+    seher VARCHAR(50),
+    qrup VARCHAR(20),
+    imtahan DECIMAL(5,2)
+);
