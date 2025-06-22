@@ -1,0 +1,20 @@
+-- SQL sorğusu necə yaradılır? 
+-- Tələbə məlumatlarından ibarət cədvəl hazırlayın. 
+-- Cədvələ əsasən tələbələrdən imtahan üzrə 17-50  arası bal yığan tələbələrin ad və soyadını göstərən SQL sorğusu yazın.
+
+CREATE TABLE telebeler (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    ad VARCHAR(50),
+    soyad VARCHAR(50),
+    imtahan DECIMAL(5,2)
+);
+
+INSERT INTO telebeler (ad, soyad, imtahan)
+VALUES 
+('Aysel', 'Məmmədova', 87.5),
+('Kamran', 'Hüseynov', 74.0),
+('Nigar', 'Əliyeva', 91.0);
+
+SELECT ad, soyad
+FROM telebeler
+WHERE imtahan BETWEEN 17 AND 50;
