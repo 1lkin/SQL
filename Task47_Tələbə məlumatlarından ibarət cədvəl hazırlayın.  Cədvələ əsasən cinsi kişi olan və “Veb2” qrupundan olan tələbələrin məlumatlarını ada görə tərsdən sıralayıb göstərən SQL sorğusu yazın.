@@ -1,0 +1,23 @@
+-- Tələbə məlumatlarından ibarət cədvəl hazırlayın.  
+-- Cədvələ əsasən cinsi kişi olan və “Veb2” qrupundan olan tələbələrin məlumatlarını ada görə tərsdən sıralayıb göstərən SQL sorğusu yazın.
+
+CREATE TABLE telebeler (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    ad VARCHAR(50),
+    soyad VARCHAR(50),
+    cins VARCHAR(10),
+    seher VARCHAR(50),
+    qrup VARCHAR(20),
+    imtahan DECIMAL(5,2)
+);
+
+INSERT INTO telebeler (ad, soyad, cins, seher, qrup, imtahan)
+VALUES 
+('Aysel', 'Məmmədova', 'Qadın', 'Bakı', 'Veb1', 87.5),
+('Kamran', 'Hüseynov', 'Kişi', 'Gəncə', 'Veb2', 74.0),
+('Nigar', 'Əliyeva', 'Qadın', 'Sumqayıt', 'Veb2', 91.0);
+
+SELECT *
+FROM telebeler
+WHERE cins = 'Kişi' AND qrup = 'Veb2'
+ORDER BY ad DESC;
