@@ -1,0 +1,5 @@
+-- Tələbə cədvəlində ortlama qiymətdən aşağı bal alan tələbələrin adlarını və ballarını göstərən SQL sorğusunu yazın.
+
+SELECT first_name, grade
+FROM telebe
+where grade < (select AVG(grade) from telebe);
