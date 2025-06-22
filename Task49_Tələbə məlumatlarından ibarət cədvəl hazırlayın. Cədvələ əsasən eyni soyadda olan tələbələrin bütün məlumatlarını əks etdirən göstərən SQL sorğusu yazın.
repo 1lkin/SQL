@@ -1,0 +1,24 @@
+-- Tələbə məlumatlarından ibarət cədvəl hazırlayın. 
+-- Cədvələ əsasən eyni soyadda olan tələbələrin bütün məlumatlarını göstərən SQL sorğusu yazın.
+
+CREATE TABLE telebeler (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    ad VARCHAR(50),
+    soyad VARCHAR(50),
+    imtahan DECIMAL(5,2)
+);
+
+INSERT INTO telebeler (ad, soyad, imtahan)
+VALUES 
+('Aysel', 'Məmmədova', 87.5),
+('Kamran', 'Hüseynov', 74.0),
+('Nigar', 'Əliyeva', 91.0);
+
+SELECT *
+FROM telebeler
+WHERE soyad IN (
+    SELECT soyad
+    FROM telebeler
+    GROUP BY soyad
+    HAVING COUNT(*) > 1
+);
